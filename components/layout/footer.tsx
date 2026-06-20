@@ -1,15 +1,5 @@
 "use client";
 
-<<<<<<< HEAD
-import { FolderGit, Briefcase, AtSign, ArrowUp, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-
-const socials = [
-  { href: "https://github.com", icon: FolderGit, label: "GitHub" },
-  { href: "https://linkedin.com", icon: Briefcase, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: AtSign, label: "Twitter" },
-=======
 import { ArrowUp, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -19,7 +9,6 @@ const socials = [
   { href: "https://github.com", icon: GitHubIcon, label: "GitHub" },
   { href: "https://linkedin.com", icon: LinkedInIcon, label: "LinkedIn" },
   { href: "https://twitter.com", icon: XIcon, label: "X (Twitter)" },
->>>>>>> aeff9a0 (Second commit)
   { href: "mailto:hello@example.com", icon: Mail, label: "Email" },
 ];
 

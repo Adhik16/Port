@@ -2,12 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-<<<<<<< HEAD
-import { Menu, Shield } from "lucide-react";
-=======
 import { usePathname } from "next/navigation";
 import { Menu, X, Shield } from "lucide-react";
->>>>>>> aeff9a0 (Second commit)
 import { Button } from "@/components/ui/button";
 import {
   Sheet,

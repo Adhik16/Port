@@ -234,6 +234,9 @@ function ContinentGlowLine({
   const innerRef = useRef<THREE.Line>(null);
   const pulseRef = useRef(0);
 
+  const outerMat = useMemo(() => new THREE.LineBasicMaterial({ color: "#22d3ee", transparent: true, opacity: 0, depthWrite: false }), []);
+  const innerMat = useMemo(() => new THREE.LineBasicMaterial({ color: "#67e8f9", transparent: true, opacity: 0, depthWrite: false }), []);
+
   useFrame((_, delta) => {
     pulseRef.current += delta * 2.5;
     const target = isActive ? 1 : 0;
@@ -252,23 +255,9 @@ function ContinentGlowLine({
   return (
     <group>
       {/* Outer glow — wider, softer */}
-      <line ref={outerRef} geometry={geometry}>
-        <lineBasicMaterial
-          color="#22d3ee"
-          transparent
-          opacity={0}
-          depthWrite={false}
-        />
-      </line>
+      <primitive ref={outerRef} object={new THREE.Line(geometry, outerMat)} />
       {/* Inner bright line — pulses */}
-      <line ref={innerRef} geometry={geometry}>
-        <lineBasicMaterial
-          color="#67e8f9"
-          transparent
-          opacity={0}
-          depthWrite={false}
-        />
-      </line>
+      <primitive ref={innerRef} object={new THREE.Line(geometry, innerMat)} />
     </group>
   );
 }
