@@ -1,13 +1,7 @@
 # Cybersecurity Portfolio — Project Context
 
-<<<<<<< HEAD
-> **Last updated**: 2026-06-12
-> **Project path**: `c:\code\portfolio`
-> **Status**: ✅ Build-ready. All phases complete except user content (Phase 5).
-=======
 > **Last updated**: 2026-06-11
 > **Project path**: `c:\Users\asus\OneDrive\Documents\Portfolio`
->>>>>>> aeff9a0 (Second commit)
 
 ---
 
@@ -58,18 +52,9 @@ Building a **dark-only, neon-purple cybersecurity portfolio** for **Adhik Shakya
 ### Core App Files
 | File | Status | Notes |
 |---|---|---|
-<<<<<<< HEAD
-| `app/globals.css` | ✅ Done | Full neon-purple CSS variable system + `@theme inline`, custom animations (`glow-pulse`, `float`), focus-visible rings, `prefers-reduced-motion` |
-| `app/layout.tsx` | ✅ Done | Metadata set, skip-to-content link, Navbar+Footer wrapped in TooltipProvider, favicon referenced |
-| `app/page.tsx` | ✅ Done | Assembles all 6 sections in order |
-| `app/loading.tsx` | ✅ NEW | Neon-purple spinner with animated dots for route transitions |
-| `app/error.tsx` | ✅ NEW | Error boundary with retry button, error digest display, cybersecurity-themed |
-| `app/not-found.tsx` | ✅ NEW | Glitch-style 404 page with terminal icon, back-home + report links |
-=======
 | `app/globals.css` | ✅ Done | Full neon-purple CSS variable system + `@theme inline`, custom animations (`glow-pulse`, `float`), focus-visible rings |
 | `app/layout.tsx` | ✅ Done | Metadata set, skip-to-content link, Navbar+Footer wrapped in TooltipProvider |
 | `app/page.tsx` | ✅ Done | Assembles all 6 sections in order |
->>>>>>> aeff9a0 (Second commit)
 
 ### Layout Components
 | File | Status | Notes |
@@ -80,13 +65,9 @@ Building a **dark-only, neon-purple cybersecurity portfolio** for **Adhik Shakya
 ### Three.js
 | File | Status | Notes |
 |---|---|---|
-<<<<<<< HEAD
-| `components/three/rotating-shield.tsx` | ✅ Done | Procedural ShapeGeometry+ExtrudeGeometry shield, LockIcon, Particles (200 points, precomputed), GlowRing torus, 3 lights. **Now respects `prefers-reduced-motion`** via `useReducedMotion()` hook |
-=======
 | `components/three/rotating-shield.tsx` | ✅ Done | Procedural ShapeGeometry+ExtrudeGeometry shield, LockIcon, Particles (200 points), GlowRing torus, 3 lights |
 | `components/three/network-globe.tsx` | ✅ Done | Interactive globe with continents, grid, data arcs, packets, atmosphere, orbital ring, stars. Hands imported from hand-models.tsx |
 | `components/three/hand-models.tsx` | ✅ Done | **NEW** — 5 hand variants: cupping-refined, defensive-palm, cybernetic-claw, energy-wireframe, pointing-command. Configurable via HandVariant interface and HAND_PRESETS. Hero has variant toggle for preview.
->>>>>>> aeff9a0 (Second commit)
 
 ### Section Components
 | File | Status | Notes |
@@ -115,26 +96,6 @@ Building a **dark-only, neon-purple cybersecurity portfolio** for **Adhik Shakya
 
 ---
 
-<<<<<<< HEAD
-## 4. Known Issues & Fixes (ALL RESOLVED)
-
-### Issue 1: pnpm workspace config corruption ✅ FIXED
-- **Symptom**: `[ERROR] Cannot destructure property 'manifest' of 'manifestsByPath[rootDir]' as it is undefined.`
-- **Fix**: `pnpm-workspace.yaml` now contains valid `onlyBuiltDependencies:` syntax
-- **Ongoing**: The file may regenerate. If `pnpm add` fails, delete the workspace yaml first.
-
-### Issue 2: OneDrive sync interference ✅ RESOLVED
-- Project moved to `c:\code\portfolio` — no OneDrive interference
-
-### Issue 3: THREE.DisableDeprecationWarnings ✅ FIXED
-- Removed from `rotating-shield.tsx` — doesn't exist in Three.js 0.184
-
-### Issue 4: Math.random() in useMemo ✅ FIXED
-- Particle positions precomputed at module level (safe because component is client-only via dynamic import)
-
-### Issue 5: Unused imports ✅ FIXED
-- Removed `usePathname`, `X` from navbar; `Download` from about
-=======
 ## 4. Known Issues & Fixes
 
 ### Issue 1: pnpm workspace config corruption
@@ -159,7 +120,6 @@ Building a **dark-only, neon-purple cybersecurity portfolio** for **Adhik Shakya
   1. Component library → select **Radix**
   2. Preset → select **Nova**
 - User must answer these interactively
->>>>>>> aeff9a0 (Second commit)
 
 ---
 
@@ -182,52 +142,6 @@ Building a **dark-only, neon-purple cybersecurity portfolio** for **Adhik Shakya
 
 ---
 
-<<<<<<< HEAD
-## 6. Build & Verification Status (2026-06-12)
-
-### Verified ✅
-- `pnpm build` — passes with 0 errors (Turbopack)
-- `pnpm lint` — passes with 0 warnings
-- `pnpm dev` — starts at `http://localhost:3000`
-- All 6 sections render: Hero, About, Skills, Projects, Blog, Contact
-- 3D shield renders in hero (dynamic import, Canvas loaded)
-- Navbar scroll-spy highlights active section
-- Mobile hamburger menu opens/closes (Sheet drawer)
-- Contact form validates and shows success state ("Message Sent!")
-- Footer social links and back-to-top button work
-- Tab navigation works through all interactive elements
-- Heading hierarchy: H1 → H2 → H3 correct throughout
-- All images have alt text
-- Responsive at 375px (mobile), 768px (tablet), 1280px+ (desktop)
-- `prefers-reduced-motion` CSS: scroll-behavior switches to `auto`
-- `prefers-reduced-motion` JS: Three.js shield/particles/ring respect the setting via `useReducedMotion()` hook
-
-### Pending User Actions
-- Run Lighthouse audit (Chrome DevTools) — target 95+ Accessibility
-- Run axe DevTools browser extension
-- Test with screen reader (NVDA/Narrator)
-- Fill in all placeholder content (see `PLACEHOLDERS.md`)
-- Replace `metadataBase` URL (`https://your-domain.com` → real domain)
-- Optional: Add `public/og-image.png` (1200×630) for social previews
-- Optional: Connect contact form to backend (Web3Forms/Formspree)
-- Optional: Add analytics
-- Deploy to Vercel
-
----
-
-## 7. Quick Start
-
-```powershell
-# Dev server
-pnpm dev
-
-# Production build
-pnpm build
-
-# Lint
-pnpm lint
-```
-=======
 ## 6. What Works vs What Doesn't
 
 ### Working ✅
@@ -266,4 +180,3 @@ pnpm dev
 ```
 
 If `pnpm install` fails with manifest error, delete `pnpm-workspace.yaml` and `node_modules`, then retry.
->>>>>>> aeff9a0 (Second commit)
