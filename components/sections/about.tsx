@@ -1,11 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-<<<<<<< HEAD
-import { Shield, Award, Terminal, Code } from "lucide-react";
-=======
 import { Shield, Download, Award, Terminal, Code } from "lucide-react";
->>>>>>> aeff9a0 (Second commit)
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";

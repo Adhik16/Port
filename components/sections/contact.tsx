@@ -4,12 +4,8 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-<<<<<<< HEAD
-import { Send, Mail, MapPin, FolderGit, Briefcase } from "lucide-react";
-=======
 import { Send, Mail, MapPin } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/brand-icons";
->>>>>>> aeff9a0 (Second commit)
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -277,11 +273,7 @@ export function Contact() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-<<<<<<< HEAD
-                          <FolderGit className="h-4 w-4" />
-=======
                           <GitHubIcon className="h-4 w-4" />
->>>>>>> aeff9a0 (Second commit)
                         </a>
                       </Button>
                     </TooltipTrigger>
@@ -301,11 +293,7 @@ export function Contact() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-<<<<<<< HEAD
-                          <Briefcase className="h-4 w-4" />
-=======
                           <LinkedInIcon className="h-4 w-4" />
->>>>>>> aeff9a0 (Second commit)
                         </a>
                       </Button>
                     </TooltipTrigger>

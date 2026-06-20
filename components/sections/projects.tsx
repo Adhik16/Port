@@ -1,12 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-<<<<<<< HEAD
-import { ExternalLink, FolderGit } from "lucide-react";
-=======
 import { ExternalLink, FolderGit2 } from "lucide-react";
 import { GitHubIcon } from "@/components/ui/brand-icons";
->>>>>>> aeff9a0 (Second commit)
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -107,11 +103,7 @@ export function Projects() {
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-3">
                         <div className="p-2 rounded-lg bg-primary/10">
-<<<<<<< HEAD
-                          <FolderGit className="h-5 w-5 text-primary" />
-=======
                           <FolderGit2 className="h-5 w-5 text-primary" />
->>>>>>> aeff9a0 (Second commit)
                         </div>
                         <CardTitle className="text-lg font-mono text-foreground group-hover:text-primary transition-colors">
                           {title}
@@ -131,11 +123,7 @@ export function Projects() {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-<<<<<<< HEAD
-                              <FolderGit className="h-4 w-4" />
-=======
                               <GitHubIcon className="h-4 w-4" />
->>>>>>> aeff9a0 (Second commit)
                             </a>
                           </Button>
                         )}
