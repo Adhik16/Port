@@ -1,9 +1,7 @@
 allowBuilds:
   sharp: true
   unrs-resolver: true
-<<<<<<< HEAD
+
 onlyBuiltDependencies:
   - sharp
   - unrs-resolver
-=======
->>>>>>> aeff9a0 (Second commit)
