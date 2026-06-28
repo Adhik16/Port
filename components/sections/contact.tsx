@@ -239,11 +239,11 @@ export function Contact() {
                 </h3>
                 <div className="space-y-3">
                   <a
-                    href="mailto:hello@example.com"
+                    href="mailto:adhikshakya16@gmail.com"
                     className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Mail className="h-4 w-4" />
-                    hello@example.com
+                    adhikshakya16@gmail.com
                   </a>
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
                     <MapPin className="h-4 w-4" />
@@ -269,7 +269,7 @@ export function Contact() {
                         aria-label="GitHub"
                       >
                         <a
-                          href="https://github.com"
+                          href="https://github.com/Adhik16"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -289,7 +289,7 @@ export function Contact() {
                         aria-label="LinkedIn"
                       >
                         <a
-                          href="https://linkedin.com"
+                          href="https://www.linkedin.com/in/adhik-shakya-60417232b/"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
