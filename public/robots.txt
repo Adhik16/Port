@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://adhikshakya.com.np/sitemap.xml

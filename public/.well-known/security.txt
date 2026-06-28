@@ -1,0 +1,4 @@
+Contact: mailto:adhikshakya16@gmail.com
+Preferred-Languages: en
+Canonical: https://adhikshakya.com.np/.well-known/security.txt
+Policy: https://adhikshakya.com.np/vulnerability-disclosure-policy
