@@ -90,6 +90,7 @@ export function Contact() {
                   <form
                   className="space-y-5"
                   noValidate="">
+                  </form>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <label
