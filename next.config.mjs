@@ -5,10 +5,11 @@ const __dirname = dirname(__filename);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    outputFileTracingRoot: "/vercel/path0",
+    outputFileTracingRoot: dirname(__dirname),
     turbopack: {
-      root: "/vercel/path0",
+      root: dirname(__dirname),
     },
   },
 };
+
 export default nextConfig;
