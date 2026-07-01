@@ -5,10 +5,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
-  turbopack: {
-    root: dirname(__dirname),
+  experimental: {
+    outputFileTracingRoot: "/vercel/path0",
+    turbopack: {
+      root: "/vercel/path0",
+    },
   },
 };
+
+export default nextConfig;
 
 export default nextConfig;
