@@ -87,7 +87,7 @@ export function Contact() {
                     </Button>
                   </motion.div>
                 ) : (
-                  <form className="space-y-5" onSubmit={handleSubmit}>
+                  <form className="space-y-5" noValidate="">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <label
