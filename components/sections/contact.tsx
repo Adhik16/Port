@@ -95,7 +95,7 @@ export function Contact() {
                       <div className="space-y-1.5">
                       </div>
                     </div>
-                  </form>
+                  
                         <label
                           htmlFor="name"
                           className="text-sm font-medium text-foreground"
