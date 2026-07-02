@@ -88,8 +88,7 @@ export function Contact() {
                   </motion.div>
                 ) : (
                   <form
-                  className="space-y-5"
-                  noValidate>
+                  className="space-y-5">
                   </form>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
