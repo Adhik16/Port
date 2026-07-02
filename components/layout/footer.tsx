@@ -3,7 +3,7 @@
 import { ArrowUp, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/ui/brand-icons";
+import { GitHubIcon, LinkedInIcon, InstagramIcon } from "@/components/ui/brand-icons";
 
 const socials = [
   { href: "https://github.com/Adhik16", icon: GitHubIcon, label: "GitHub" },
