@@ -6,10 +6,10 @@ import { Separator } from "@/components/ui/separator";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/ui/brand-icons";
 
 const socials = [
-  { href: "https://github.com", icon: GitHubIcon, label: "GitHub" },
-  { href: "https://linkedin.com", icon: LinkedInIcon, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: XIcon, label: "X (Twitter)" },
-  { href: "mailto:hello@example.com", icon: Mail, label: "Email" },
+  { href: "https://github.com/Adhik16", icon: GitHubIcon, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/adhik-shakya-60417232b/?skipRedirect=true", icon: LinkedInIcon, label: "LinkedIn" },
+  { href: "https://www.instagram.com/ad.shakya_/", icon: InstagramIcon, label: "Instagram" },
+  { href: "mailto:adhikshakya16@gmail.com", icon: Mail, label: "Email" },
 ];
 
 export function Footer() {
