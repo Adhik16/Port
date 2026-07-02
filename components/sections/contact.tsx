@@ -90,9 +90,12 @@ export function Contact() {
                   <form
                   className="space-y-5"
                   >
-                  </form>
+                  
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
+                      </div>
+                    </div>
+                  </form>
                         <label
                           htmlFor="name"
                           className="text-sm font-medium text-foreground"
