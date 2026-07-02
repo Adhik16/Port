@@ -121,7 +121,7 @@ export function Contact() {
                             {errors.name.message}
                           </p>
                         )}
-                      </div>
+                      
                       <div className="space-y-1.5">
                         <label
                           htmlFor="email"
