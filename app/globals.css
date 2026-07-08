@@ -120,6 +120,66 @@
   50% { transform: translateY(-10px); }
 }
 
+/* ── Terminal Intro Animations ── */
+@keyframes terminal-scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes terminal-cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes terminal-flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 1; }
+  10% { opacity: 0.98; }
+  15% { opacity: 1; }
+  20% { opacity: 0.96; }
+  50% { opacity: 1; }
+  80% { opacity: 0.99; }
+  100% { opacity: 1; }
+}
+
+@keyframes terminal-glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 0); }
+  80% { transform: translate(1px, 0); }
+  100% { transform: translate(0); }
+}
+
+@keyframes terminal-color-shift {
+  0% { color: oklch(0.72 0.22 142); }        /* hacker green */
+  20% { color: oklch(0.68 0.20 155); }        /* green-cyan */
+  40% { color: oklch(0.64 0.18 190); }        /* cyan */
+  60% { color: oklch(0.62 0.18 240); }        /* blue */
+  80% { color: oklch(0.62 0.20 270); }        /* indigo */
+  100% { color: oklch(0.62 0.22 300); }       /* website purple (primary) */
+}
+
+@keyframes color-shift-bg {
+  0% { border-color: oklch(0.72 0.22 142 / 0.4); }
+  20% { border-color: oklch(0.68 0.20 155 / 0.4); }
+  40% { border-color: oklch(0.64 0.18 190 / 0.4); }
+  60% { border-color: oklch(0.62 0.18 240 / 0.4); }
+  80% { border-color: oklch(0.62 0.20 270 / 0.4); }
+  100% { border-color: oklch(0.62 0.22 300 / 0.4); }
+}
+
+.terminal-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: currentColor;
+  margin-left: 2px;
+  animation: terminal-cursor-blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
