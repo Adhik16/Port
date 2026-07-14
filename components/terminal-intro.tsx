@@ -250,6 +250,7 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
   const [progress, setProgress] = useState(0);
   const [showSkip, setShowSkip] = useState(false);
   const [glitchActive, setGlitchActive] = useState(false);
+  const [sessionId, setSessionId] = useState("");
 
   const terminalRef = useRef<HTMLDivElement>(null);
   const totalDuration = SCAN_STEPS.reduce((sum, s) => sum + s.duration, 0);
@@ -276,6 +277,13 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
       setTimeout(() => setGlitchActive(false), 100 + Math.random() * 200);
     }, 2000 + Math.random() * 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  // ── Generate client-only session ID (avoids hydration mismatch) ──
+  useEffect(() => {
+    setSessionId(
+      Math.random().toString(36).substring(2, 10).toUpperCase()
+    );
   }, []);
 
   // ── Typewriter effect for current log line ──
@@ -472,7 +480,7 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
             y: 0,
             opacity: 1,
             boxShadow: scanPassed
-              ? "0 0 40px oklch(0.62 0.22 300 / 0.4), 0 0 80px oklch(0.62 0.22 300 / 0.2)"
+              ? "0 0 40px rgba(168, 85, 247, 0.4), 0 0 80px rgba(168, 85, 247, 0.2)"
               : "none",
           }}
           transition={{
@@ -485,8 +493,8 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
             className="flex items-center gap-2 px-4 py-2.5 bg-zinc-950 border rounded-t-lg transition-colors duration-700"
             animate={{
               borderColor: scanPassed
-                ? "oklch(0.62 0.22 300 / 0.6)"
-                : "oklch(0.28 0.03 280 / 0.5)",
+                ? "rgba(168, 85, 247, 0.6)"
+                : "rgba(60, 58, 68, 0.5)",
             }}
           >
             <div className="flex gap-1.5">
@@ -494,8 +502,8 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 className="w-3 h-3 rounded-full"
                 animate={{
                   backgroundColor: scanPassed
-                    ? "oklch(0.62 0.22 300 / 0.9)"
-                    : "oklch(0.6 0.22 20 / 0.8)",
+                    ? "rgba(168, 85, 247, 0.9)"
+                    : "rgba(239, 68, 68, 0.8)",
                 }}
                 transition={{ duration: 0.5 }}
               />
@@ -503,8 +511,8 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 className="w-3 h-3 rounded-full"
                 animate={{
                   backgroundColor: scanPassed
-                    ? "oklch(0.62 0.22 300 / 0.7)"
-                    : "oklch(0.7 0.18 85 / 0.8)",
+                    ? "rgba(168, 85, 247, 0.7)"
+                    : "rgba(234, 179, 8, 0.8)",
                 }}
                 transition={{ duration: 0.5 }}
               />
@@ -512,8 +520,8 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 className="w-3 h-3 rounded-full"
                 animate={{
                   backgroundColor: scanPassed
-                    ? "oklch(0.62 0.22 300 / 0.9)"
-                    : "oklch(0.72 0.22 142 / 0.8)",
+                    ? "rgba(168, 85, 247, 0.9)"
+                    : "rgba(34, 197, 94, 0.8)",
                 }}
                 transition={{ duration: 0.5 }}
               />
@@ -527,8 +535,8 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 className="text-xs font-mono ml-2"
                 animate={{
                   color: scanPassed
-                    ? "oklch(0.62 0.22 300)"
-                    : "oklch(0.65 0.02 280)",
+                    ? "#a855f7"
+                    : "#696671",
                 }}
                 transition={{ duration: 0.5 }}
               >
@@ -546,18 +554,18 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
             className="h-[420px] overflow-y-auto bg-black border-x border-b rounded-b-lg p-4 font-mono text-xs leading-relaxed transition-colors duration-700"
             animate={{
               borderColor: scanPassed
-                ? "oklch(0.62 0.22 300 / 0.6)"
-                : "oklch(0.28 0.03 280 / 0.5)",
+                ? "rgba(168, 85, 247, 0.6)"
+                : "rgba(60, 58, 68, 0.5)",
             }}
             style={{
               scrollbarWidth: "thin",
-              scrollbarColor: "oklch(0.62 0.22 300 / 0.3) transparent",
+              scrollbarColor: "rgba(168, 85, 247, 0.3) transparent",
             }}
           >
             {/* Startup banner */}
             <motion.div
               className="mb-3"
-              animate={{ color: scanPassed ? "oklch(0.62 0.22 300 / 0.9)" : "oklch(0.64 0.18 190 / 0.8)" }}
+              animate={{ color: scanPassed ? "rgba(168, 85, 247, 0.9)" : "rgba(6, 182, 212, 0.8)" }}
               transition={{ duration: 0.5 }}
             >
               <pre className="text-[10px] leading-tight mb-2">
@@ -572,8 +580,8 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 className="text-[10px]"
                 animate={{
                   color: scanPassed
-                    ? "oklch(0.62 0.22 300 / 0.8)"
-                    : "oklch(0.72 0.22 142 / 0.7)",
+                    ? "rgba(168, 85, 247, 0.8)"
+                    : "rgba(34, 197, 94, 0.7)",
                 }}
                 transition={{ duration: 0.5 }}
               >
@@ -593,8 +601,8 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 className="font-bold mb-2 text-[10px]"
                 animate={{
                   color: scanPassed
-                    ? "oklch(0.62 0.22 300 / 0.9)"
-                    : "oklch(0.64 0.18 190 / 0.8)",
+                    ? "rgba(168, 85, 247, 0.9)"
+                    : "rgba(6, 182, 212, 0.8)",
                 }}
                 transition={{ duration: 0.5 }}
               >
@@ -638,14 +646,14 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
               className="flex items-center justify-between px-4 py-2 bg-zinc-950 border-x border-b rounded-b-lg transition-colors duration-700"
               animate={{
                 borderColor: scanPassed
-                  ? "oklch(0.62 0.22 300 / 0.6)"
-                  : "oklch(0.28 0.03 280 / 0.5)",
+                  ? "rgba(168, 85, 247, 0.6)"
+                  : "rgba(60, 58, 68, 0.5)",
               }}
             >
               <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-400">
                 <div className="flex items-center gap-1">
                   <motion.div
-                    animate={{ color: scanPassed ? "oklch(0.62 0.22 300)" : "oklch(0.72 0.22 142)" }}
+                    animate={{ color: scanPassed ? "#a855f7" : "#22c55e" }}
                     transition={{ duration: 0.5 }}
                   >
                     <Lock className="w-3 h-3" />
@@ -655,7 +663,7 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 <span className="text-zinc-600">|</span>
                 <div className="flex items-center gap-1">
                   <motion.div
-                    animate={{ color: scanPassed ? "oklch(0.62 0.22 300)" : "oklch(0.72 0.22 142)" }}
+                    animate={{ color: scanPassed ? "#a855f7" : "#22c55e" }}
                     transition={{ duration: 0.5 }}
                   >
                     <Shield className="w-3 h-3" />
@@ -665,14 +673,14 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
                 <span className="text-zinc-600">|</span>
                 <motion.span
                   className="text-zinc-300"
-                  animate={{ color: scanPassed ? "oklch(0.62 0.22 300)" : "oklch(0.72 0.22 142)" }}
+                  animate={{ color: scanPassed ? "#a855f7" : "#22c55e" }}
                   transition={{ duration: 0.5 }}
                 >
                   SECURE
                 </motion.span>
               </div>
-              <div className="text-[10px] font-mono text-zinc-500">
-                SESSION: {Math.random().toString(36).substring(2, 10).toUpperCase()}
+              <div className="text-[10px] font-mono text-zinc-500" suppressHydrationWarning>
+                SESSION: {sessionId}
               </div>
             </motion.div>
           </motion.div>
