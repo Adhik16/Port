@@ -177,11 +177,11 @@ export async function POST(request: NextRequest) {
     }
 
     // 3. Turnstile verification
-    // In development, accept either a real Turnstile token OR the localhost bypass token.
-    // In production, Turnstile is always required.
+    // Skipped when: (dev mode + bypass token), OR Turnstile not configured at all.
     const isDev = process.env.NODE_ENV === "development";
-    const devBypassToken = body.turnstileToken === "dev-bypass-localhost";
-    const skipTurnstile = isDev && devBypassToken;
+    const hasBypassToken = body.turnstileToken === "dev-bypass-localhost";
+    const turnstileNotConfigured = !process.env.TURNSTILE_SECRET_KEY;
+    const skipTurnstile = (isDev && hasBypassToken) || turnstileNotConfigured;
 
     if (!skipTurnstile) {
       if (!body.turnstileToken || typeof body.turnstileToken !== "string") {

@@ -82,10 +82,10 @@ function TurnstileErrorFallback() {
 // ── Missing site key warning (env var not set on deployment) ─────────────────
 function MissingKeyWarning() {
   return (
-    <div className="flex items-center justify-center gap-2 rounded-md border border-red-500/20 bg-red-950/30 px-4 py-3 text-xs">
-      <span className="inline-block h-2 w-2 rounded-full bg-red-400" />
-      <span className="text-red-400/80 font-mono">
-        Turnstile not configured — add NEXT_PUBLIC_TURNSTILE_SITE_KEY
+    <div className="flex items-center justify-center gap-2 rounded-md border border-amber-500/20 bg-amber-950/20 px-4 py-3 text-xs">
+      <span className="inline-block h-2 w-2 rounded-full bg-amber-400" />
+      <span className="text-amber-400/70 font-mono">
+        Bot check skipped — set up Turnstile in Vercel env
       </span>
     </div>
   );
@@ -106,14 +106,14 @@ export function TurnstileWidget({
   const callbacksRef = useRef({ onVerify });
   callbacksRef.current = { onVerify };
 
-  // ── Dev mode: fire bypass token immediately ──────────────────────────────
+  // ── Dev mode OR missing key: fire bypass token so form works ──────────
   useEffect(() => {
-    if (devMode) {
+    if (devMode || !siteKey) {
       callbacksRef.current.onVerify("dev-bypass-localhost");
     }
-  }, [devMode]);
+  }, [devMode, siteKey]);
 
-  // ── Dev mode: just show the badge, skip Cloudflare entirely ──────────────
+  // ── Dev mode: show themed badge ────────────────────────────────────────
   if (devMode) {
     return (
       <div className="flex justify-center" style={{ minHeight: 70 }}>

@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SectionHeading } from "./section-heading";
 import { TurnstileWidget } from "@/components/ui/turnstile-widget";
+import { CreationOfAdamAscii } from "@/components/ui/creation-of-adam-ascii";
 import {
   Tooltip,
   TooltipContent,
@@ -413,6 +414,13 @@ export function Contact() {
                     Available for remote opportunities
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* The Creation of Adam — ASCII art divider */}
+            <Card className="bg-card/50 border-border/50 overflow-hidden">
+              <CardContent className="p-4 flex justify-center">
+                <CreationOfAdamAscii />
               </CardContent>
             </Card>
 
