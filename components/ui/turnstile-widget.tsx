@@ -70,10 +70,22 @@ function DevBypassBadge() {
 // ── Turnstile load error fallback ────────────────────────────────────────────
 function TurnstileErrorFallback() {
   return (
-    <div className="flex items-center gap-2 rounded-md border border-yellow-500/20 bg-yellow-950/30 px-3 py-2 text-xs">
-      <span className="inline-block h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse" />
-      <span className="text-yellow-400/80">
-        Security check unavailable. Your message will still be reviewed.
+    <div className="flex items-center justify-center gap-2 rounded-md border border-yellow-500/20 bg-yellow-950/30 px-4 py-3 text-xs">
+      <span className="inline-block h-2 w-2 rounded-full bg-yellow-400 animate-pulse" />
+      <span className="text-yellow-400/80 font-mono">
+        Turnstile unavailable — refresh and try again
+      </span>
+    </div>
+  );
+}
+
+// ── Missing site key warning (env var not set on deployment) ─────────────────
+function MissingKeyWarning() {
+  return (
+    <div className="flex items-center justify-center gap-2 rounded-md border border-red-500/20 bg-red-950/30 px-4 py-3 text-xs">
+      <span className="inline-block h-2 w-2 rounded-full bg-red-400" />
+      <span className="text-red-400/80 font-mono">
+        Turnstile not configured — add NEXT_PUBLIC_TURNSTILE_SITE_KEY
       </span>
     </div>
   );
@@ -121,9 +133,7 @@ export function TurnstileWidget({
       widgetIdRef.current = window.turnstile.render(container, {
         sitekey: siteKey,
         callback: (token: string) => callbacksRef.current.onVerify(token),
-        "expired-callback": () => {
-          // Keep the callback from the latest render
-        },
+        "expired-callback": () => callbacksRef.current.onVerify(""),
         "error-callback": () => setLoadError(true),
         theme: "dark",
         size: "normal",
@@ -134,8 +144,8 @@ export function TurnstileWidget({
   }, [siteKey]);
 
   useEffect(() => {
+    // If no site key is configured, skip Turnstile entirely
     if (!siteKey) {
-      setLoadError(true);
       return;
     }
 
@@ -197,6 +207,11 @@ export function TurnstileWidget({
       }
     };
   }, [renderWidget]);
+
+  // ── Render: missing key → network error → real widget ──────────────────
+  if (!siteKey) {
+    return <MissingKeyWarning />;
+  }
 
   if (loadError) {
     return <TurnstileErrorFallback />;

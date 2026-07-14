@@ -373,7 +373,7 @@ export function Contact() {
                     <Button
                       type="submit"
                       className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25"
-                      disabled={submitStatus === 'sending'}
+                      disabled={submitStatus === 'sending' || !turnstileToken}
                     >
                       {submitStatus === 'sending' ? (
                         <>
