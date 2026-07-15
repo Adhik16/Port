@@ -106,14 +106,14 @@ export function TurnstileWidget({
   const callbacksRef = useRef({ onVerify });
   callbacksRef.current = { onVerify };
 
-  // ── Dev mode OR missing key: fire bypass token so form works ──────────
+  // ── Dev mode: fire bypass token so form works ──────────────────────
   useEffect(() => {
-    if (devMode || !siteKey) {
+    if (devMode) {
       callbacksRef.current.onVerify("dev-bypass-localhost");
     }
-  }, [devMode, siteKey]);
+  }, [devMode]);
 
-  // ── Dev mode: show themed badge ────────────────────────────────────────
+  // ── Dev mode: show themed badge ────────────────────────────────────
   if (devMode) {
     return (
       <div className="flex justify-center" style={{ minHeight: 70 }}>

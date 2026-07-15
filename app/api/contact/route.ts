@@ -177,10 +177,10 @@ export async function POST(request: NextRequest) {
     }
 
     // 3. Turnstile verification
-    // Skipped when: (dev mode + bypass token), OR Turnstile not configured at all.
+    // Skipped when: (dev mode + bypass token), OR Turnstile not fully configured.
     const isDev = process.env.NODE_ENV === "development";
     const hasBypassToken = body.turnstileToken === "dev-bypass-localhost";
-    const turnstileNotConfigured = !process.env.TURNSTILE_SECRET_KEY;
+    const turnstileNotConfigured = !process.env.TURNSTILE_SECRET_KEY || !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
     const skipTurnstile = (isDev && hasBypassToken) || turnstileNotConfigured;
 
     if (!skipTurnstile) {
