@@ -248,7 +248,7 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
   const [isComplete, setIsComplete] = useState(false);
   const [scanPassed, setScanPassed] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [showSkip, setShowSkip] = useState(false);
+  const [showSkip, setShowSkip] = useState(true);
   const [glitchActive, setGlitchActive] = useState(false);
   const [sessionId, setSessionId] = useState("");
 
@@ -264,11 +264,6 @@ export function TerminalIntro({ onComplete }: TerminalIntroProps) {
     }
   }, [logs, charIndex]);
 
-  // ── Show skip button after 3 seconds ──
-  useEffect(() => {
-    const t = setTimeout(() => setShowSkip(true), 3000);
-    return () => clearTimeout(t);
-  }, []);
 
   // ── Glitch effect ──
   useEffect(() => {

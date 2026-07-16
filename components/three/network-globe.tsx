@@ -376,7 +376,7 @@ function Scene() {
 export default function NetworkGlobe() {
   return (
     <div className="w-full h-full" aria-label="3D Earth with AI satellite companion" role="img">
-      <Canvas camera={{ position: [0, 0.12, 4.8], fov: 55 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }} style={{ background: "transparent" }}>
+      <Canvas camera={{ position: [0, 0.12, 5.0], fov: 70 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }} style={{ background: "transparent" }}>
         <Scene />
       </Canvas>
     </div>

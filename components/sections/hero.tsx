@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DecryptedText from "@/components/ui/decrypted-text";
 import dynamic from "next/dynamic";
 
 // ── PREVIEW TOGGLE ──────────────────────────────────────────
@@ -77,13 +78,37 @@ export function Hero() {
               </div>
             </motion.div>
 
-            <motion.h1
+            <motion.h2
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold font-mono tracking-tight leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold font-mono tracking-tight leading-normal"
             >
-              Hi, I&apos;m{" "}
-              <span className="text-primary">Adhik Shakya</span>
-            </motion.h1>
+              <DecryptedText
+                text="Hello there,"
+                animateOn="view"
+                sequential
+                speed={80}
+                maxIterations={15}
+                className="text-foreground"
+              />
+              <br />
+              <DecryptedText
+                text="Adhik Shakya"
+                animateOn="view"
+                sequential
+                speed={80}
+                maxIterations={15}
+                className="text-primary"
+              />
+              {" "}
+              <DecryptedText
+                text="here."
+                animateOn="view"
+                sequential
+                speed={80}
+                maxIterations={15}
+                className="text-foreground"
+              />
+            </motion.h2>
 
             <motion.p
               variants={itemVariants}
