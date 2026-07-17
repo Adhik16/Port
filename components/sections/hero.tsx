@@ -101,7 +101,7 @@ export function Hero() {
               />
               {" "}
               <DecryptedText
-                text="here."
+                text="here!!.."
                 animateOn="view"
                 sequential
                 speed={80}
