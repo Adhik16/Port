@@ -106,7 +106,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6" aria-label="Contact">
+    <section id="contact" className="py-24 px-6 scroll-mt-20" aria-label="Contact">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           title="Get in Touch"

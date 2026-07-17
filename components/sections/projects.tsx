@@ -77,7 +77,7 @@ const cardVariants = {
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 px-6" aria-label="Projects">
+    <section id="projects" className="py-24 px-6 scroll-mt-20" aria-label="Projects">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           title="Projects"

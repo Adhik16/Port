@@ -55,7 +55,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden scroll-mt-20"
       aria-label="Hero introduction"
     >
       {/* Background gradient */}

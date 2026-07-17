@@ -15,7 +15,7 @@ const stats = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 px-6" aria-label="About me">
+    <section id="about" className="py-24 px-6 scroll-mt-20" aria-label="About me">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           title="About Me"

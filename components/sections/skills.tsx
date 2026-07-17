@@ -70,7 +70,7 @@ const cardVariants = {
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 px-6" aria-label="Skills and expertise">
+    <section id="skills" className="py-24 px-6 scroll-mt-20" aria-label="Skills and expertise">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           title="Skills & Expertise"
